@@ -17,7 +17,13 @@ function List({
             </>);
 }
 List.propTypes = {
-  items: [],
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            calories: PropTypes.number.isRequired
+    })
+  ),
   category: PropTypes.string,
 };
 export default List;
