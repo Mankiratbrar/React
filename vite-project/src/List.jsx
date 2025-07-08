@@ -1,5 +1,8 @@
 import props from 'prop-types';
-function List(props) {
+function List(
+    items= [],
+    category= "Unknown Category"
+) {
 
     const itemList= props.items;
     const category = props.category;
@@ -11,6 +14,9 @@ function List(props) {
     </li>
     );
 
-    return(<h3>{category }</h3><ol>{listItems}</ol>);
+    return(<>
+            <h3 className='List-Category'>{category}</h3>
+            <ol className='List-Items'>{listItems}</ol>
+            </>);
 }
 export default List;
