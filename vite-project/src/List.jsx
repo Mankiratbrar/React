@@ -1,13 +1,10 @@
-import props from 'prop-types';
-function List(
-    items= [],
-    category= "Unknown Category"
-) {
+import PropTypes from 'prop-types';
+function List({
+    items = [],
+    category = "Unknown Category"
+}) {
 
-    const itemList= props.items;
-    const category = props.category;
-
-    const listItems = itemList.map(item => 
+    const listItems = items.map(item => 
     <li key={item.id}>
         {item.name}: &nbsp;
         <b>{item.calories}</b>
@@ -19,4 +16,8 @@ function List(
             <ol className='List-Items'>{listItems}</ol>
             </>);
 }
+List.propTypes = {
+  items: [],
+  category: PropTypes.string,
+};
 export default List;
