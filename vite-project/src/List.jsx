@@ -4,7 +4,7 @@ function List({
     category = "Unknown Category"
 }) {
 
-    const listItems = items.map(item => 
+    const listItems = items.map(item  => 
     <li key={item.id}>
         {item.name}: &nbsp;
         <b>{item.calories}</b>
